@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import menuCard from './menuCard';
+import MenuCard from './menuCard';
 import './styles.scss';
 
 export default function MenuItem() {
@@ -41,9 +41,9 @@ export default function MenuItem() {
   const [item, setItem] = useState(sections);
 
   return (
-    <div>
+      <div className="homepage">
       {
-      item.map(items => <menuCard key={items.id} items={items}/> )
+        item.map(items => <MenuCard key={items.id} items={items}/> )
       }
     </div>
   );
