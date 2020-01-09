@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import menuCard from './menuCard';
 import './styles.scss';
 
 export default function MenuItem() {
@@ -42,7 +43,7 @@ export default function MenuItem() {
   return (
     <div>
       {
-        item.map
+      item.map(items => <menuCard key={items.id} items={items}/> )
       }
     </div>
   );
