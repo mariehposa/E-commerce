@@ -4,6 +4,10 @@ const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
 
+const validPasswordRegex = RegExp(
+    /^[a-zA-Z0-9]*$/i
+)
+
 const checkFormErrors = () => {
     let valid = true;
     object.values(errors).forEach(value => value.length > 0 && (value = false));
@@ -37,6 +41,9 @@ export default class MenuForm extends Component () {
             case 'email':
                 validEmailRegex.test(value) ? '' : 'Invalid email';
                 break;
+
+            case 'password':
+                value.length 
         }
     }
 
