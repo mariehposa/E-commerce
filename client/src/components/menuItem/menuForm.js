@@ -13,9 +13,9 @@ class MenuForm extends Component () {
     render () {
         return (
             <div>
-                <input type="text" placeholder="Username" />
-                <input type="email" placeholder="Email" />
-                <input type="text" placeholder="Password" />
+                <input type="text" placeholder="Username" value={this.state.username} />
+                <input type="email" placeholder="Email" value={this.state.email} />
+                <input type="text" placeholder="Password" value={this.state.password} />
                 <submit>Submit</submit>
             </div>
         );
