@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
 class MenuForm extends Component () {
-    constructor (){
-        super();
+    constructor (props){
+        super(props);
         this.state = {
-
+            username: '',
+            email: '',
+            password: ''
         }
     }
-    
+
     render () {
         return (
             <div>
