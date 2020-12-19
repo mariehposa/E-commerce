@@ -33,6 +33,10 @@ export default class MenuForm extends Component () {
             case 'username':
                 value.length < 3 ? 'username must be at least 3 characters long' : '';
                 break;
+
+            case 'email':
+                validEmailRegex.test(value) ? '' : 'Invalid email';
+                break;
         }
     }
 
