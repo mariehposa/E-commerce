@@ -4,7 +4,7 @@ const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
 
-const validateForm = () => {
+const checkFormErrors = () => {
     let valid = true;
     object.values(errors).forEach(value => value.length > 0 && (value = false));
     return valid
@@ -21,6 +21,18 @@ export default class MenuForm extends Component () {
                 email: '',
                 password: ''
             }
+        }
+    }
+
+    handleValidation (event) {
+        event.preventDefault();
+        const { name, value } = event.target
+        let errors = this.state.errors
+
+        switch (name) {
+            case 'username':
+                value.length < 3 ? 'username must be at least 3 characters long' : '';
+                break;
         }
     }
 
