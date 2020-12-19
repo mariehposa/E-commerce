@@ -49,6 +49,8 @@ export default class MenuForm extends Component () {
             default:
                 break;
         }
+
+        this.setState({errors, [name]: value})
     }
 
     render () {
