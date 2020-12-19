@@ -43,7 +43,8 @@ export default class MenuForm extends Component () {
                 break;
 
             case 'password':
-                value.length 
+                validPasswordRegex.test(value) && value.length > 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
+                break;
         }
     }
 
