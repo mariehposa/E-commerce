@@ -53,14 +53,18 @@ export default class MenuForm extends Component () {
         this.setState({errors, [name]: value})
     }
 
+    handleSubmit (event) {
+        event.preventDefault()
+    }
+
     render () {
         return (
-            <div>
+            <form onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Username" value={this.state.username} />
                 <input type="email" placeholder="Email" value={this.state.email} />
                 <input type="text" placeholder="Password" value={this.state.password} />
                 <submit>Submit</submit>
-            </div>
+            </form>
         );
     }
 } 
