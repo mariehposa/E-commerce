@@ -58,12 +58,24 @@ export default class MenuForm extends Component () {
     }
 
     render () {
+        const { errors } = this.state.errors;
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="username" placeholder="Username" />
-                <input type="email"  name="email" placeholder="Email"  />
-                <input type="text" name="password" placeholder="Password"  />
-                <submit type="submit">Submit</submit>
+                <div>
+                    <input type="text" name="username" placeholder="Username" onChange={this.handleValidation} />
+                    { errors.username.length > 0 && <p>{errors.username}</p> }
+                </div>
+                <div>
+                    <input type="email"  name="email" placeholder="Email" onChange={this.handleValidation} />
+                    { errors.email.length > 0 && <p>{errors.email}</p> }
+                </div>
+                <div>
+                    <input type="text" name="password" placeholder="Password" onChange={this.handleValidation} />
+                    { errors.password.length > 0 && <p>{errors.password}</p> }
+                </div>
+                <div>
+                    <submit type="submit">Submit</submit>
+                </div>
             </form>
         );
     }
