@@ -60,10 +60,10 @@ export default class MenuForm extends Component () {
     render () {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Username" value={this.state.username} />
-                <input type="email" placeholder="Email" value={this.state.email} />
-                <input type="text" placeholder="Password" value={this.state.password} />
-                <submit>Submit</submit>
+                <input type="text" name="username" placeholder="Username" />
+                <input type="email"  name="email" placeholder="Email"  />
+                <input type="text" name="password" placeholder="Password"  />
+                <submit type="submit">Submit</submit>
             </form>
         );
     }
