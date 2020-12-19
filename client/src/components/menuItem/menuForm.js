@@ -35,15 +35,18 @@ export default class MenuForm extends Component () {
 
         switch (name) {
             case 'username':
-                value.length < 3 ? 'username must be at least 3 characters long' : '';
+                errors.username = value.length < 3 ? 'username must be at least 3 characters long' : '';
                 break;
 
             case 'email':
-                validEmailRegex.test(value) ? '' : 'Invalid email';
+                errors.email = validEmailRegex.test(value) ? '' : 'Invalid email';
                 break;
 
             case 'password':
-                validPasswordRegex.test(value) && value.length > 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
+                errors.password = validPasswordRegex.test(value) && value.length > 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
+                break;
+            
+            default:
                 break;
         }
     }
