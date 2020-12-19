@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 
-class MenuForm extends Component () {
+export default class MenuForm extends Component () {
     constructor (props){
         super(props);
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            errors: {
+                username: '',
+                email: '',
+                password: ''
+            }
         }
     }
 
