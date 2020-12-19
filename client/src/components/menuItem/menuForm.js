@@ -5,15 +5,10 @@ const validEmailRegex = RegExp(
 )
 
 const validPasswordRegex = RegExp(
-    /^[a-zA-Z0-9]*$/i
+    /^([a-zA-z]+[0-9]+\w*\d*)+/
 )
 
-const checkFormErrors = () => {
-    let valid = true;
-    object.values(errors).forEach(value => value.length > 0 && (value = false));
-    return valid
-}
-export default class MenuForm extends Component () {
+export default class MenuForm extends Component {
     constructor (props){
         super(props);
         this.state = {
@@ -28,10 +23,10 @@ export default class MenuForm extends Component () {
         }
     }
 
-    handleValidation (event) {
+    handleValidation  =(event) =>  {
         event.preventDefault();
         const { name, value } = event.target
-        let errors = this.state.errors
+        let errors = this.state.errors;
 
         switch (name) {
             case 'username':
@@ -43,7 +38,7 @@ export default class MenuForm extends Component () {
                 break;
 
             case 'password':
-                errors.password = validPasswordRegex.test(value) && value.length > 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
+                errors.password = validPasswordRegex.test(value) && value.length >= 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
                 break;
             
             default:
@@ -53,12 +48,12 @@ export default class MenuForm extends Component () {
         this.setState({errors, [name]: value})
     }
 
-    handleSubmit (event) {
+    handleSubmit =  (event) => {
         event.preventDefault()
     }
 
     render () {
-        const { errors } = this.state.errors;
+        const { errors } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
                 <div>
@@ -74,7 +69,7 @@ export default class MenuForm extends Component () {
                     { errors.password.length > 0 && <p>{errors.password}</p> }
                 </div>
                 <div>
-                    <submit type="submit">Submit</submit>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         );
