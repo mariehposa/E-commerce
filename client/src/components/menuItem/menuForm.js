@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+const validEmailRegex = RegExp(
+    /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+)
+
 export default class MenuForm extends Component () {
     constructor (props){
         super(props);
