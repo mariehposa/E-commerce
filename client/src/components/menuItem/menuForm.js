@@ -4,6 +4,11 @@ const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
 
+const validateForm = () => {
+    let valid = true;
+    object.values(errors).forEach(value => value.length > 0 && (value = false));
+    return valid
+}
 export default class MenuForm extends Component () {
     constructor (props){
         super(props);
