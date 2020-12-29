@@ -18,6 +18,7 @@ export default class MenuForm extends Component {
             errors: {
                 username: '',
                 email: '',
+                phoneNumber: '',
                 password: ''
             }
         }
@@ -61,8 +62,12 @@ export default class MenuForm extends Component {
                     { errors.username.length > 0 && <p>{errors.username}</p> }
                 </div>
                 <div>
-                    <input type="email"  name="email" placeholder="Email" onChange={this.handleValidation} />
+                    <input type="email" name="email" placeholder="Email" onChange={this.handleValidation} />
                     { errors.email.length > 0 && <p>{errors.email}</p> }
+                </div>
+                <div>
+                    <input type="number" name="phoneNumber" placeholder="phoneNumber" onChange={this.handleValidation} />
+                    { errors.phoneNumber.length > 0 && <p>{errors.phoneNumber}</p> }
                 </div>
                 <div>
                     <input type="text" name="password" placeholder="Password" onChange={this.handleValidation} />
