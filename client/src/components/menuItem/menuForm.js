@@ -4,6 +4,10 @@ const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
 
+const validPhoneHumber = RegExp(
+    /^([\+]?[0-9]+)+/
+)
+
 const validPasswordRegex = RegExp(
     /^([a-zA-z]+[0-9]+\w*\d*)+/
 )
