@@ -42,6 +42,10 @@ export default class MenuForm extends Component {
                 errors.email = validEmailRegex.test(value) ? '' : 'Invalid email';
                 break;
 
+            case 'phoneNumber':
+                errors.phoneNumber = validPhoneNumber.test(value) && value.length >=6 ? '' : 'Invalid phone number';
+                break;
+
             case 'password':
                 errors.password = validPasswordRegex.test(value) && value.length >= 8 ? '' : 'Password must be at least 8 characters and alpahumeric';
                 break;
