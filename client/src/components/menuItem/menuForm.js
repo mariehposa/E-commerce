@@ -4,7 +4,7 @@ const validEmailRegex = RegExp(
     /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
 
-const validPhoneHumber = RegExp(
+const validPhoneNumber = RegExp(
     /^([\+]?[0-9]+)+/
 )
 
@@ -43,7 +43,7 @@ export default class MenuForm extends Component {
                 break;
 
             case 'phoneNumber':
-                errors.phoneNumber = validPhoneNumber.test(value) && value.length >=6 ? '' : 'Invalid phone number';
+                errors.phoneNumber = validPhoneNumber.test(value) && value.length >=6 ? '' : 'Enter valid phone number';
                 break;
 
             case 'password':
@@ -74,7 +74,7 @@ export default class MenuForm extends Component {
                     { errors.email.length > 0 && <p>{errors.email}</p> }
                 </div>
                 <div>
-                    <input type="number" name="phoneNumber" placeholder="phoneNumber" onChange={this.handleValidation} />
+                    <input type="text" name="phoneNumber" placeholder="Phone number" onChange={this.handleValidation} />
                     { errors.phoneNumber.length > 0 && <p>{errors.phoneNumber}</p> }
                 </div>
                 <div>
